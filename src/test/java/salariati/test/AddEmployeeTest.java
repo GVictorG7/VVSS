@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import salariati.repository.interfaces.EmployeeRepositoryInterface;
-import salariati.repository.mock.EmployeeMock;
+import salariati.repository.mock.EmployeeRepositoryMock;
 import salariati.validator.EmployeeValidator;
 import salariati.controller.EmployeeController;
 import salariati.enumeration.DidacticFunction;
@@ -20,7 +20,7 @@ public class AddEmployeeTest {
 	
 	@Before
 	public void setUp() {
-		employeeRepository = new EmployeeMock();
+		employeeRepository = new EmployeeRepositoryMock();
 		controller         = new EmployeeController(employeeRepository);
 		employeeValidator  = new EmployeeValidator();
 	}
@@ -33,7 +33,7 @@ public class AddEmployeeTest {
 	
 	@Test
 	public void testAddNewEmployee() {
-		Employee newEmployee = new Employee("ValidLastName", "1910509055057", DidacticFunction.ASISTENT, "3000");
+		Employee newEmployee = new Employee("ValidLastName", "1910509055057", DidacticFunction.ASSISTANT, 3000f);
 		assertTrue(employeeValidator.isValid(newEmployee));
 		controller.addEmployee(newEmployee);
 		assertEquals(7, controller.getEmployeesList().size());

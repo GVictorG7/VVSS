@@ -1,5 +1,5 @@
 package salariati.enumeration;
 
 public enum DidacticFunction {
-	ASISTENT, LECTURER, TEACHER;
+	ASSISTANT, LECTURER, TEACHER, ASSOCIATE_PROFESSOR;
 }

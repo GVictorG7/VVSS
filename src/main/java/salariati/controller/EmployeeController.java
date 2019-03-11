@@ -4,17 +4,21 @@ import java.util.List;
 
 import salariati.model.Employee;
 import salariati.repository.interfaces.EmployeeRepositoryInterface;
+import salariati.validator.EmployeeValidator;
 
 public class EmployeeController {
 	
 	private EmployeeRepositoryInterface employeeRepository;
-	
+	private EmployeeValidator employeeValidator = new EmployeeValidator();
+
 	public EmployeeController(EmployeeRepositoryInterface employeeRepository) {
 		this.employeeRepository = employeeRepository;
 	}
 	
 	public void addEmployee(Employee employee) {
-		employeeRepository.addEmployee(employee);
+		if (employeeValidator.isValid(employee)) {
+			employeeRepository.addEmployee(employee);
+		}
 	}
 	
 	public List<Employee> getEmployeesList() {

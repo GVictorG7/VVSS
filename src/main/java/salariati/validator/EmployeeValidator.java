@@ -10,10 +10,10 @@ public class EmployeeValidator {
 	public boolean isValid(Employee employee) {
 		boolean isLastNameValid  = employee.getLastName().matches("[a-zA-Z]+") && (employee.getLastName().length() > 2);
 		boolean isCNPValid       = employee.getCnp().matches("[a-z0-9]+") && (employee.getCnp().length() == 13);
-		boolean isFunctionValid  = employee.getFunction().equals(DidacticFunction.ASISTENT) ||
+		boolean isFunctionValid  = employee.getFunction().equals(DidacticFunction.ASSISTANT) ||
 								   employee.getFunction().equals(DidacticFunction.LECTURER) ||
 								   employee.getFunction().equals(DidacticFunction.TEACHER);
-		boolean isSalaryValid    = employee.getSalary().matches("[0-9]+") && (employee.getSalary().length() > 1) && (Integer.parseInt(employee.getSalary()) > 0);
+		boolean isSalaryValid    = employee.getSalary() != null && employee.getSalary() >= 0f;
 		
 		return isLastNameValid && isCNPValid && isFunctionValid && isSalaryValid;
 	}

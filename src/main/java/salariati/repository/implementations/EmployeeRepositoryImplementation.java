@@ -9,16 +9,13 @@ import salariati.exception.EmployeeException;
 import salariati.model.Employee;
 
 import salariati.repository.interfaces.EmployeeRepositoryInterface;
-import salariati.validator.EmployeeValidator;
 
-public class EmployeeImpl implements EmployeeRepositoryInterface {
+public class EmployeeRepositoryImplementation implements EmployeeRepositoryInterface {
 	
 	private final String employeeDBFile = "employeeDB/employees.txt";
-	private EmployeeValidator employeeValidator = new EmployeeValidator();
 
 	@Override
 	public boolean addEmployee(Employee employee) {
-		if( employeeValidator.isValid(employee) ) {
 			BufferedWriter bw = null;
 			try {
 				bw = new BufferedWriter(new FileWriter(employeeDBFile, true));
@@ -29,7 +26,6 @@ public class EmployeeImpl implements EmployeeRepositoryInterface {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
 		return false;
 	}
 

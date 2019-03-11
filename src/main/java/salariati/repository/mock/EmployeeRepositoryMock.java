@@ -9,29 +9,29 @@ import salariati.model.Employee;
 import salariati.repository.interfaces.EmployeeRepositoryInterface;
 import salariati.validator.EmployeeValidator;
 
-public class EmployeeMock implements EmployeeRepositoryInterface {
+public class EmployeeRepositoryMock implements EmployeeRepositoryInterface {
 
 	private List<Employee> employeeList;
 	private EmployeeValidator employeeValidator;
 	
-	public EmployeeMock() {
+	public EmployeeRepositoryMock() {
 		
 		employeeValidator = new EmployeeValidator();
 		employeeList = new ArrayList<Employee>();
 		
-		Employee Ionel   = new Employee("Pacuraru", "1234567890876", DidacticFunction.ASISTENT, "2500");
-		Employee Mihai   = new Employee("Dumitrescu", "1234567890876", DidacticFunction.LECTURER, "2500");
-		Employee Ionela  = new Employee("Ionescu", "1234567890876", DidacticFunction.LECTURER, "2500");
-		Employee Mihaela = new Employee("Pacuraru", "1234567890876", DidacticFunction.ASISTENT, "2500");
-		Employee Vasile  = new Employee("Georgescu", "1234567890876", DidacticFunction.TEACHER,  "2500");
-		Employee Marin   = new Employee("Puscas", "1234567890876", DidacticFunction.TEACHER,  "2500");
+		Employee employeeIonel   = new Employee("Pacuraru", "1234567890876", DidacticFunction.ASSISTANT, 2500f);
+		Employee employeeMihai   = new Employee("Dumitrescu", "1234567890876", DidacticFunction.LECTURER, 2500f);
+		Employee employeeIonela  = new Employee("Ionescu", "1234567890876", DidacticFunction.LECTURER, 2500f);
+		Employee employeeMihaela = new Employee("Pacuraru", "1234567890876", DidacticFunction.ASSISTANT, 2500f);
+		Employee employeeVasile  = new Employee("Georgescu", "1234567890876", DidacticFunction.TEACHER,  2500f);
+		Employee employeeMarin   = new Employee("Puscas", "1234567890876", DidacticFunction.TEACHER,  2500f);
 		
-		employeeList.add( Ionel );
-		employeeList.add( Mihai );
-		employeeList.add( Ionela );
-		employeeList.add( Mihaela );
-		employeeList.add( Vasile );
-		employeeList.add( Marin );
+		employeeList.add( employeeIonel );
+		employeeList.add( employeeMihai );
+		employeeList.add( employeeIonela );
+		employeeList.add( employeeMihaela );
+		employeeList.add( employeeVasile );
+		employeeList.add( employeeMarin );
 	}
 	
 	@Override
