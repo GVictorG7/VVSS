@@ -40,4 +40,57 @@ public class AddEmployeeTest {
 		assertTrue(newEmployee.equals(controller.getEmployeesList().get(controller.getEmployeesList().size() - 1)));
 	}
 
+	@Test
+	public void TC1_ECP() {
+		Employee newEmployee = new Employee("Jon", "1981111525252", DidacticFunction.LECTURER, 3000f);
+		assertTrue(employeeValidator.isValid(newEmployee));
+		controller.addEmployee(newEmployee);
+		assertEquals(7, controller.getEmployeesList().size());
+		assertTrue(newEmployee.equals(controller.getEmployeesList().get(controller.getEmployeesList().size() - 1)));
+	}
+
+	@Test
+	public void TC2_ECP() {
+		Employee newEmployee = new Employee("Mihai", "1234567890123", DidacticFunction.ASSISTANT, -2f);
+		assertFalse(employeeValidator.isValid(newEmployee));
+		controller.addEmployee(newEmployee);
+		assertEquals(6, controller.getEmployeesList().size());
+		assertFalse(newEmployee.equals(controller.getEmployeesList().get(controller.getEmployeesList().size() - 1)));
+	}
+
+	@Test
+	public void TC3_ECP() {
+		Employee newEmployee = new Employee("Boss123", "1234567890123", DidacticFunction.TEACHER, 0f);
+		assertFalse(employeeValidator.isValid(newEmployee));
+		controller.addEmployee(newEmployee);
+		assertEquals(6, controller.getEmployeesList().size());
+		assertFalse(newEmployee.equals(controller.getEmployeesList().get(controller.getEmployeesList().size() - 1)));
+	}
+
+	@Test
+	public void TC4_ECP() {
+		Employee newEmployee = new Employee("Nume", "2", DidacticFunction.TEACHER, 0f);
+		assertFalse(employeeValidator.isValid(newEmployee));
+		controller.addEmployee(newEmployee);
+		assertEquals(6, controller.getEmployeesList().size());
+		assertFalse(newEmployee.equals(controller.getEmployeesList().get(controller.getEmployeesList().size() - 1)));
+	}
+
+	@Test
+	public void TC1_BVA() {
+		Employee newEmployee = new Employee("Paula", "2990709082410", DidacticFunction.ASSISTANT, 5000f);
+		assertTrue(employeeValidator.isValid(newEmployee));
+		controller.addEmployee(newEmployee);
+		assertEquals(7, controller.getEmployeesList().size());
+		assertTrue(newEmployee.equals(controller.getEmployeesList().get(controller.getEmployeesList().size() - 1)));
+	}
+
+	@Test
+	public void TC2_BVA() {
+		Employee newEmployee = new Employee("ab", "1234567890123", DidacticFunction.TEACHER, 0f);
+		assertTrue(employeeValidator.isValid(newEmployee));
+		controller.addEmployee(newEmployee);
+		assertEquals(7, controller.getEmployeesList().size());
+		assertTrue(newEmployee.equals(controller.getEmployeesList().get(controller.getEmployeesList().size() - 1)));
+	}
 }

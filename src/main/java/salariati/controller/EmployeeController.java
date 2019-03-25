@@ -18,6 +18,8 @@ public class EmployeeController {
 	public void addEmployee(Employee employee) {
 		if (employeeValidator.isValid(employee)) {
 			employeeRepository.addEmployee(employee);
+		} else {
+			System.out.println("EROARE: Angajat invalid");
 		}
 	}
 	
