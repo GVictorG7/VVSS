@@ -19,12 +19,12 @@ public class EmployeeRepositoryMock implements EmployeeRepositoryInterface {
 		employeeValidator = new EmployeeValidator();
 		employeeList = new ArrayList<Employee>();
 		
-		Employee employeeIonel   = new Employee("Pacuraru", "1234567890876", DidacticFunction.ASSISTANT, 2500f);
-		Employee employeeMihai   = new Employee("Dumitrescu", "1234567890876", DidacticFunction.LECTURER, 2500f);
-		Employee employeeIonela  = new Employee("Ionescu", "1234567890876", DidacticFunction.LECTURER, 2500f);
-		Employee employeeMihaela = new Employee("Pacuraru", "1234567890876", DidacticFunction.ASSISTANT, 2500f);
-		Employee employeeVasile  = new Employee("Georgescu", "1234567890876", DidacticFunction.TEACHER,  2500f);
-		Employee employeeMarin   = new Employee("Puscas", "1234567890876", DidacticFunction.TEACHER,  2500f);
+		Employee employeeIonel   = new Employee("Pacuraru", "1230310890876", DidacticFunction.ASSISTANT, 2500f);
+		Employee employeeMihai   = new Employee("Dumitrescu", "1230210890876", DidacticFunction.LECTURER, 1500f);
+		Employee employeeIonela  = new Employee("Ionescu", "1230216890876", DidacticFunction.LECTURER, 2500f);
+		Employee employeeMihaela = new Employee("Pacuraru", "1230210890876", DidacticFunction.ASSISTANT, 3500f);
+		Employee employeeVasile  = new Employee("Georgescu", "1230211890876", DidacticFunction.TEACHER,  2500f);
+		Employee employeeMarin   = new Employee("Puscas", "1230212890876", DidacticFunction.TEACHER,  2500f);
 		
 		employeeList.add( employeeIonel );
 		employeeList.add( employeeMihai );
@@ -64,4 +64,7 @@ public class EmployeeRepositoryMock implements EmployeeRepositoryInterface {
 		return null;
 	}
 
+	public void clearEmployeeList() {
+		employeeList.clear();
+	}
 }

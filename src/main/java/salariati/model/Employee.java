@@ -4,6 +4,8 @@ import salariati.enumeration.DidacticFunction;
 import salariati.exception.EmployeeException;
 import salariati.validator.EmployeeValidator;
 
+import java.util.Date;
+
 public class Employee {
 
 	/** The last name of the employee */
@@ -168,4 +170,10 @@ public class Employee {
 		return employee;
 	}
 
+    public Date computeBirthDateFromCNP() {
+//        System.out.println("year: " + Integer.parseInt("19".concat(cnp.substring(1, 3))));
+//        System.out.println("month: " + Integer.parseInt(cnp.substring(3, 5)));
+//        System.out.println("day: " + Integer.parseInt(cnp.substring(5, 7)));
+        return new Date(Integer.parseInt("19".concat(cnp.substring(1, 3))), Integer.parseInt(cnp.substring(3, 5)), Integer.parseInt(cnp.substring(5, 7)));
+    }
 }
